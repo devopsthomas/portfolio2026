@@ -4,7 +4,7 @@ Un portfolio interactif en style terminal Linux, développé avec HTML, CSS et J
 
 ## 🌐 Accès
 
-- **GitHub Pages** : https://tuxplorer.github.io
+- **GitHub Pages** : https://github.com/devopsthomas
 - **Domaine personnalisé** : https://thomas-letard.me (optionnel)
 
 ## 🎯 Fonctionnalités
