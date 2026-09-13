@@ -1,0 +1,426 @@
+:root {
+    --bg-black: #0a0a0a;
+    --text-gray: #e0e0e0;
+    --text-gray-medium: #a0a0a0;
+    --accent-white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lilex', monospace;
+  background-color: var(--bg-black);
+  color: var(--text-gray);
+  font-size: 16px;
+}
+
+.wrapperPage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  flex-shrink: 0;
+  height: auto;
+  width: auto;
+  background-color: var(--bg-black);
+}
+
+.containerHeader {
+  margin: 5px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.centerHeader {
+  margin: 5px;
+  flex-grow: 1;
+  min-width: 150px;
+}
+
+.centerHeader a {
+  list-style: none;
+  text-decoration: none;
+  color: var(--text-gray);
+  font-size: clamp(12px, 3vw, 14px);
+  word-break: break-word;
+}
+
+.centerHeader a:hover {
+  transition: 60ms;
+  color: var(--accent-white);
+}
+
+.rightHeader {
+  margin: 5px;
+  font-size: clamp(11px, 2.5vw, 13px);
+  color: var(--text-gray-medium);
+  white-space: nowrap;
+}
+
+.terminalBanner {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.terminalAscii {
+  font-size: clamp(10px, 5vw, 20px);
+  line-height: 1;
+  color: var(--accent-white);
+  margin: 0;
+  white-space: pre;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.underAsciiContent {
+  font-size: clamp(14px, 4vw, 18px);
+  color: var(--accent-white);
+  font-weight: 500;
+  font-family: 'Lilex', monospace;
+  margin: 8px 0 0 0;
+}
+
+.mainTerminal {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: clamp(10px, 5vw, 100px) clamp(10px, 3vw, 20px);
+  background: var(--bg-black);
+}
+
+.containerTerminal {
+  margin: 0 auto;
+  max-width: 1700px;
+  width: 100%;
+  padding: 0 5px;
+}
+
+.footer {
+  font-size: clamp(12px, 2.5vw, 14px);
+  flex-shrink: 0;
+  position: relative;
+  height: auto;
+  width: auto;
+  background-color: var(--bg-black);
+}
+
+.containerFooter {
+  margin: 5px;
+  text-align: center;
+  color: var(--text-gray-medium);
+  padding: clamp(5px, 1vw, 10px);
+}
+
+.copyrightFooter {
+  margin: 0;
+  padding: 0;
+  font-size: clamp(10px, 2vw, 12px);
+  word-break: break-word;
+}
+
+.copyrightLinkName {
+  color: var(--text-gray);
+  text-decoration: none;
+}
+
+.copyrightLinkName:hover {
+  color: var(--accent-white);
+}
+
+#output {
+    min-height: 200px;
+    padding: clamp(10px, 2vw, 15px);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-gray);
+    font-family: 'Lilex', monospace;
+    font-size: clamp(12px, 2.5vw, 13px);
+    overflow-y: auto;
+    margin-bottom: clamp(15px, 2vw, 20px);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.4;
+    border-left: 3px solid var(--text-gray);
+    display: flex;
+    flex-direction: column;
+}
+
+#promptLine {
+    display: flex;
+    align-items: center;
+    gap: clamp(6px, 2vw, 8px);
+    margin-top: clamp(8px, 1.5vw, 10px);
+    flex-wrap: wrap;
+}
+
+#promptSpan {
+    color: var(--text-gray);
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: clamp(12px, 2.5vw, 13px);
+}
+
+#commandInput {
+    background: transparent;
+    border: none;
+    color: var(--text-gray);
+    font-family: 'Lilex', monospace;
+    font-size: clamp(12px, 2.5vw, 13px);
+    outline: none;
+    flex: 1;
+    padding: 0;
+    caret-color: var(--accent-white);
+    min-width: 100px;
+}
+
+#commandInput:focus {
+    outline: none;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: clamp(12px, 2.5vw, 13px);
+}
+
+::-webkit-scrollbar {
+    width: clamp(8px, 2vw, 12px);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-gray);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-white);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-gray) var(--bg-black);
+}
+
+@media (max-width: 768px) {
+  .containerHeader {
+    padding: 6px 8px;
+  }
+
+  .mainTerminal {
+    padding: 20px 12px;
+  }
+
+  .containerTerminal {
+    padding: 0 3px;
+  }
+
+  #output {
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .containerHeader {
+    padding: 5px 6px;
+    gap: 5px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .centerHeader {
+    margin: 0;
+    flex-grow: 0;
+    min-width: auto;
+  }
+
+  .rightHeader {
+    font-size: 10px;
+    line-height: 1.3;
+    max-width: 100%;
+  }
+
+  .centerHeader a {
+    font-size: 11px;
+  }
+
+  .mainTerminal {
+    padding: 15px 8px;
+  }
+
+  .containerTerminal {
+    padding: 0 2px;
+  }
+
+  .terminalAscii {
+    font-size: 10px;
+    line-height: 0.9;
+  }
+
+  .underAsciiContent {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  #output {
+    min-height: 100px;
+    padding: 8px;
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  #promptLine {
+    gap: 4px;
+    margin-top: 5px;
+  }
+
+  #promptSpan {
+    font-size: 11px;
+  }
+
+  #commandInput {
+    font-size: 11px;
+    min-width: 80px;
+  }
+
+  .containerFooter {
+    padding: 5px;
+  }
+
+  .copyrightFooter {
+    font-size: 9px;
+  }
+
+  pre {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    font-size: 14px;
+  }
+
+  .containerHeader {
+    padding: 4px 4px;
+    gap: 3px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rightHeader {
+    font-size: 9px;
+  }
+
+  .centerHeader a {
+    font-size: 10px;
+  }
+
+  .mainTerminal {
+    padding: 10px 5px;
+  }
+
+  .terminalAscii {
+    font-size: 8px;
+    line-height: 0.8;
+  }
+
+  .underAsciiContent {
+    font-size: 11px;
+  }
+
+  #output {
+    min-height: 80px;
+    padding: 6px;
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  #commandInput {
+    font-size: 10px;
+    min-width: 60px;
+  }
+
+  pre {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .containerHeader {
+    padding: 3px 8px;
+    margin: 2px;
+  }
+
+  .mainTerminal {
+    padding: 10px 12px;
+  }
+
+  .terminalBanner {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
+
+  .terminalAscii {
+    font-size: 8px;
+    line-height: 0.8;
+  }
+
+  .underAsciiContent {
+    font-size: 10px;
+    margin: 3px 0 0 0;
+  }
+
+  #output {
+    min-height: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .containerFooter {
+    padding: 2px;
+    margin: 2px;
+  }
+
+  .copyrightFooter {
+    font-size: 9px;
+  }
+}
+
+.terminalInput,
+#commandInput {
+    border: none !important;
+    border-bottom: none !important;
+}
+
+.terminalInput:focus,
+#commandInput:focus {
+    border: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+}

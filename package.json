@@ -1,0 +1,24 @@
+{
+  "name": "tuxplorer-portfolio",
+  "version": "1.0.0",
+  "description": "Terminal Portfolio de Thomas Letard - TSSR Apprentice",
+  "main": "index.html",
+  "scripts": {
+    "start": "open index.html",
+    "build": "echo 'No build needed - static site'"
+  },
+  "keywords": [
+    "portfolio",
+    "terminal",
+    "linux",
+    "tssr",
+    "thomas-letard",
+    "tuxplorer"
+  ],
+  "author": "Thomas Letard <thomasletard3@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tuxplorer/tuxplorer.github.io.git"
+  }
+}
